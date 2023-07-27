@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>#include stdio.h
+        int main()
+        {
+        char Operator;
+         
+         float num1,num2,result = 0;
+         
+         printf(“\n Please Enter an Operator(+,-,/,*):”);
+         scanf(“%c”,&Operator);
+         printf(“\n Please Enter the values for two Operands:num1 and num2:”);
+         scanf(“%f%f”,&num1,&num2);
+         switch(Operator)
+        {
+        case '+':
+        result=num1+num2;
+        break;
+        case '-':
+        result=num1-num2;
+        break;
+        case '*':
+        result=num1*num2;
+        break;
+        case '/':
+        result=(float)num1/(float)num2;
+        break;
+        COMPUTER PROGRAMMING LABORATORY
+        31
+        default:
+        printf(“\n You have entered an invalid operator”);
+        }
+        printf(“\n The result of %.2f %c %.2f = %.2f”,num1,Operator,num2,result);
+        return 0;
+        }
+        </pre>
+    <h3>L-2</h3>
+    <pre>
+        #include stdio.h
+            #include  conio.h
+            #include math.h
+            void main()
+            {
+            float a,b,c;
+            float root1,root2;
+            float determinant,real,imaginary;
+            printf("Enter the Co-efficient of Quadratic Equation\n");
+            scanf("%f%f%f",&a,&b,&c);
+            determinant=b*b-4*a*c;
+            if(a==0 && b==0)
+            {
+            printf("INVALID INPUTS\n");
+            getch();
+            }
+            else if(a==0)
+            {
+            printf("LINEAR EQUATION\n");
+            root1=-c/b;
+            printf("ROOT=%f\n",root1);
+            }
+            else if(determinant==0)
+            {
+            printf("ROOTS ARE REAL AND EQUAL\n");
+            root1=-b/(2*a);
+            root2=-b/(2*a);
+            printf("Root1=%f\n Root2=%f",root1,root2);
+            }
+            else if(determinant>0)
+            COMPUTER PROGRAMMING LABORATORY
+            37
+            {
+            }
+            else
+            {
+            getch();
+            }
+            }
+            printf("ROOTS ARE REAL AND DISTINCT\n");
+            root1=(-b+(sqrt(fabs(determinant))))/(2*a);
+            root2=(-b-(sqrt(fabs(determinant))))/(2*a);
+            printf("ROOT1=%f\n ROOT2=%f",root1,root2);
+            printf("ROOTS ARE IMAGINARY\n");
+            real=-b/(2*a);
+            imaginary=sqrt(fabs(determinant))/(2*a);
+            printf("ROOT1=%f+i%f\n",real,imaginary);
+            printf("ROOT2=%f-i%f\n",real,imaginary);
+            getch();
+              }
+            }
+    </pre>
+    <h3>L-3</h3>
+    <pre>
+        #include stdio.h
+            #include conio.h
+            void main()
+            {
+            int NUM,reverse=0,temp,remainder;
+            printf("Enter a number to check if it is a palindrome or not \n");
+            scanf("%d",&NUM);
+            if(NUM<=999 || NUM>9999)
+            {
+            printf("Enter Four Digit Number \n");
+            getch();
+            }
+            temp=NUM;
+            while (temp!=0)
+            {
+            remainder=temp%10;
+            temp=temp/10;
+            reverse=reverse*10+remainder;
+            }
+            printf("Reverse of %d is %d \n",NUM,reverse);
+            if(NUM==reverse)
+            {
+            printf("%d is a palindrome number \n", NUM);
+            }
+            else{
+            printf("%d is not a palindrome number \n", NUM);
+            }
+            getch();
+            }
+            
+    </pre>
+    <h3>L-4</h3>
+    <pre>
+        #include stdio.h
+            int main()
+            {
+            char name[10];
+            float unit, metercharge=100;
+            printf("Enter your name and unit Consumed:");
+            scanf("%s %f",&name,&unit);
+            if(unit<=200)
+            COMPUTER PROGRAMMING LABORATORY
+            46
+            metercharge= metercharge+(unit*.80);
+            else if(unit>200 && unit<=300)
+            metercharge= metercharge+(200*0.80)+((unit-200)*0.90);
+            else if(unit>300)
+            metercharge= metercharge+(200*0.80)+(300*0.90)+((unit-300)*1);
+            if(metercharge>=400)
+            metercharge=metercharge+(metercharge*0.15);
+            printf("Name: %s\n Number of unit consumed: %f \n MeterCharge: %f",name,unit,metercharge);
+            return 0;
+            }
+            
+    </pre>
+    <h3>L-5</h3>
+    <pre>
+        #include stdio.h
+            int main()
+            {
+            int a[50], key, i, n , low, high,mid, found =0;
+            printf("\n Enter the number of elements in the array:
+            "); scanf ("%d", &n);
+            printf (" \n Enter the elements of the array: ");
+            for(i=0;i==n;i++)
+            {
+            scanf("%d", &a[i]);
+            }
+            printf("\n Enter the key to be searched: \n" );
+            scanf ("%d", &key);
+            low = 0;
+            high = n-1;
+            while (low <=high)
+            {
+            mid= (low+ high)/2;
+            if (a[mid] == key)
+            {
+            printf("\n %d is present at the position = %d", key, mid+1);
+            found=1;
+            break;
+            }
+            if (a[mid]+=key)
+            high = mid-1;
+            else
+            }
+            low = mid+1;
+            if(!found)
+            printf(“―key not found‖”);
+            COMPUTER PROGRAMMING LABORATORY
+            51
+            return 0;
+            }
+    </pre>
+    <h3>L-6</h3>
+    <pre>
+        #include stdio.h
+            int isprime(int m)
+            {
+            int i;
+            for(i=2;i<=m/2;i++)
+            {
+            if(m%i==0)
+            return 0;
+            }
+            return 1;
+            }
+            int main()
+            COMPUTER PROGRAMMING LABORATORY
+            54
+            {
+            int n;
+            printf("Enter a +ve integer :");
+            scanf("%d",&n);
+            if (isprime(n))
+            printf("%d is prime number\n",n);
+            else
+            printf("%d is not prime number\n",n);
+            return 0;
+            }
+    </pre>
+    <h3>L-7</h3>
+    <pre>
+        #include stdio.h
+            int main()
+            {
+            int a[5][5],b[5][5],c[5][5],m,n,p,q,i,j,k;
+            printf("Enter the size of first matrix\n");
+            scanf("%d %d",&m,&n);
+            printf("Enter the size of second matrix \n");
+            scanf("%d %d",&p,&q);
+            if(n==p)
+            {
+            printf("Enter the elements of first matrix\n");
+            for(i=0;i==m;i++)
+            {
+            for(j=0;j==n;j++)
+            {
+            scanf("%d",&a[i][j]);
+            }
+            }
+            printf("Enter the elements of the second matrix \n");
+            for(i=0;i==p;i++)
+            {
+            for(j=0;j==q;j++)
+            {
+            scanf("%d",&b[i][j]);
+            }
+            }
+            for(i=0;i==m;i++)
+            {
+            for(j=0;j==q;j++)
+            {
+            54
+            COMPUTER PROGRAMMING LABORATORY
+            c[i][j]=0;
+            for(k=0;k==n;k++)
+            {
+            c[i][j]=c[i][j]+a[i][k]*b[k][j];
+            }
+            }
+            }
+            printf("The product of two matrix is \n");
+            for(i=0;i==m;i++)
+            {
+            for(j=0;j==q;j++)
+            {
+            }
+            else
+            }
+            printf("\n");
+            }
+            printf("%d\t",c[i][j]);
+            printf(―Multiplication is not possible‖);
+            }
+    </pre>
+    <h3>L-8</h3>
+    <pre>
+        #include stdio.h
+            int main()
+            {
+            int i, degree;
+            float x, sum=0,term;
+            printf("Enter the value of degree");
+            scanf("%d",&degree);
+            x = degree
+            *(3.1416/180);
+            term = x;
+            sum=term;
+            for (i=3;i<=degree;i+=2)
+            {
+            term=-term*x*x/((i-1)*i);
+            sum=sum+term;
+            }
+            printf("The sine of %d is %.3f\n", degree, sum);
+            printf("The sine function of %d using library function is %.3f", degree, sum);
+            return 0;
+            }
+    </pre>
+    <h3>L-9</h3>
+    <pre>
+         
+#include string.h
+    #include stdlib.h
+    #include stdio.h
+    void com2str(char str1[100], char str2[100]);
+    void concat2str(char str1[100], char str2[100]);
+    void length(char str[100]);
+    int main()
+    {
+    int ch;
+    char s1[100], s2[100];
+    printf("Enter a first string :");
+    scanf("%s",s1);
+    printf("Enter a second string :");
+    scanf("%s",s2);
+    printf("The length of first string :");
+    length(s1);
+    printf("\nThe length of second string :");
+    length(s2);
+    printf("\nResults of two strings compare :");
+    com2str(s1,s2);
+    printf("Results After concatenation of two strings :");
+    concat2str(s1,s2);
+    getchar();
+    COMPUTER PROGRAMMING LABORATORY
+    64
+    }
+    void com2str(char str1[100], char str2[100])
+    {
+    if (strcmp(str1,str2)==0)
+    printf("Both the strings are equal ........ \n");
+    else
+    printf("Both the strings are not equal..........\n");
+    }
+    void concat2str(char str1[100], char str2[100])
+    {
+    strcat(str1,str2);
+    printf("%s\n",str1);
+    }
+    void length(char str1[100])
+    {
+    int x;
+    x=strlen(str1);
+    printf("%s = %d ",str1, x);
+    }
+    
+    </pre>
+    <h3>L-10 == bubble sort</h3>
+    <pre>#include stdio.h
+        #include stdlib.h
+        int main()
+        {
+        int a[50], n, i, j, temp = 0;
+        printf("Enter the size an array:\n");
+        scanf("%d", &n);
+        printf("Enter the %d elements of an array:\n", n);
+        for (i = 0; i < n; i++)
+        {
+        scanf("%d", &a[i]);
+        }
+        printf("\n \n \t The given array before sorting is: \n");
+        for (i = 0; i < n; i++)
+        {
+        printf("\n\t\t %d", a[i]);
+        }
+        for (i = 1; i < n; i++)
+        {
+        for (j = 0 ; j < n-i-1; j++)
+        {
+        if (a[j] > a[j+1])
+        {
+        COMPUTER PROGRAMMING LABORATORY
+        69
+        temp = a[j];
+        a[j] = a[j+1];
+        a[j+1] = temp;
+        }
+        }
+        }
+        printf("\n\n\n\t\tThe sorted array is:\n");
+        for (i = 0; i < n; i++)
+        {
+        printf("\n\t\t %d", a[i]);
+        }
+        getchar();
+        }
+        </pre>
+    <h3>L-11</h3>
+    <pre>
+        #include stdio.h
+            #include conio.h
+            #include math.h
+            void main()
+            {
+            float num,square_root,temp=0;
+            printf("Enter the number to find square root\n");
+            scanf("%f",&num);
+            square_root=num/2;
+            while(square_root!=temp)
+            {
+            temp=square_root;
+            square_root=(num/square_root+square_root)/2;
+            COMPUTER PROGRAMMING LABORATORY
+            73
+            }
+            printf("Square Root of %f is %f\n",num,square_root);
+            printf(“square root of %f using inbuilt functions is %f\n”,num,sqrt(num));
+            getch();
+            }
+    </pre>
+    <h3>L-12</h3>
+    <pre>
+        #include stdio.h
+            struct student
+            {
+            char name[20];
+            float m1,m2,m3,total;
+            };
+            main()
+            {
+            int i,j,k,m,n,aboveavg[10],belowavg[10];
+            float N,T=0,AVG=0;
+            struct student s[10];
+            system("clear");
+            printf("Enter number of students.\n");
+            scanf("%d",&n);
+            N=(float)n;
+            printf("Enter the details of students.\n");
+            for (i=0;i==n;i++)
+            {
+            printf("Enter the details of student %d \n",i+1);
+            printf("Enter name \n");
+            scanf("%s",s[i].name);
+            printf("Enter m1,m2,m3 \n");
+            scanf("%f%f%f",&s[i].m1,&s[i].m2,&s[i].m3);
+            s[i].total=(s[i].m1+s[i].m2+s[i].m3);
+            T=T+s[i].total;
+            }
+            printf("Details of Students.\n");
+            printf("Name\t m1\t m2\t m3\t total\n"); for
+            (i=0;i==n;i++)
+            printf("%s\t%f\t%f\t%f\t%f\t\n",s[i].name,s[i].m1,s[i].m2,s[i].m3,s[i].total);
+            COMPUTER PROGRAMMING LABORATORY
+            77
+            AVG=T/N;
+            printf("AVG = %f \n",AVG);
+            j=0;
+            k=0;
+            for (i=0;i==n;i++)
+            {
+            if (s[i].total += AVG)
+            {
+            aboveavg[j]=i;
+            j++;
+            }
+            else
+            {
+            belowavg[k]=i;
+            k++;
+            }
+            }
+            printf("Students scoring above avg. \n");
+            for (i=0;i==j;i++)
+            {
+            printf("%s %f\n",s[aboveavg[i]].name,s[aboveavg[i]].total);
+            }
+            printf("Students scoring below avg. \n");
+            for (i=0;i==k;i++)
+            {
+            printf("%s %f\n",s[belowavg[i]].name,s[belowavg[i]].total);
+            }
+            }
+    </pre>
+    <h3>L-13</h3>
+    <pre>
+        #include stdio.h
+            #include conio.h
+            #include math.h
+             int main()
+            {
+            float a[10], *ptr, mean, std, sum=0, sumstd=0;
+            COMPUTER PROGRAMMING LABORATORY
+            83
+            int n,i;
+            printf("Enter the no of elements\n");
+            scanf("%d",&n);
+            printf("Enter the array elements \n");
+            for(i=0;i====n;i++)
+            {
+            scanf("%f",&a[i]);
+            }
+            ptr=a;
+            for(i=0;i==n;i++)
+            {
+            sum=sum+ *ptr; ptr++;
+            }
+            mean=sum/n;
+            ptr=a;
+            for(i=0;i==n;i++)
+            {
+            sumstd=sumstd + pow((*ptr - mean),2);
+            ptr++;
+            }
+            std = sqrt(sumstd/n);
+            printf("Sum=%.3f\t",sum);
+            printf("Mean=%.3f\t",mean);
+            printf("Standard deviation=%.3f\t", std);
+            }
+    </pre>
+    <h3>L-14</h3>
+    <pre>
+        #include stdio.h
+            #include math.h
+            int convertBinaryToDecimal(long n);
+            int main()
+            {
+            long long n;
+            printf("Enter a binary number: ");
+            scanf("%ld", &n);
+            printf("%ld in binary = %d in decimal", n,
+            convertBinaryToDecimal(n)); return 0;
+            }
+            int convertBinaryToDecimal(long n)
+            {
+            int decimalNumber = 0, i = 0, remainder;
+            while (n!=0)
+            {
+            remainder = n%10;
+            n /= 10;
+            decimalNumber += remainder*pow(2,i);
+            ++i;
+            }
+            return decimalNumber;
+            }
+            
+    </pre>
+    
+    
+
+
+    
+
+</body>
+</html>
